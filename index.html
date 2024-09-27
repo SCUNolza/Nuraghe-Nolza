@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map Redirect</title>
+</head>
+<body>
+    <h1></h1>
+
+    <script type="text/javascript">
+        const destinationLatitude = 39.91707322763692; // Sostituisci con la latitudine della tua destinazione
+        const destinationLongitude = 9.073143513392587; // Sostituisci con la longitudine della tua destinazione
+
+        if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+            // Apple Maps
+            window.location.href = `http://maps.apple.com/?daddr=${destinationLatitude},${destinationLongitude}&dirflg=d`;
+        } else if (/Android/i.test(navigator.userAgent)) {
+            // Google Maps
+            window.location.href = `https://www.google.com/maps/dir/?api=1&origin=My+Location&destination=${destinationLatitude},${destinationLongitude}`;
+        } else {
+            // Fallback a Google Maps per altri dispositivi
+            window.location.href = `https://www.google.com/maps/dir/?api=1&origin=My+Location&destination=${destinationLatitude},${destinationLongitude}`;
+        }
+    </script>
+</body>
+</html>
